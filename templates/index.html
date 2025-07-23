@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Social Media Post Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📱 Social Media Post Generator</h1>
+        <form method="POST">
+            <input type="text" name="keyword" placeholder="Enter theme (e.g. travel, fitness)">
+            <button type="submit">Generate</button>
+        </form>
+
+        {% if result %}
+        <div class="output-box">
+            <h3>🎯 Caption:</h3>
+            <p>{{ result.caption }}</p>
+
+            <h3>📛 Hashtags:</h3>
+            <p>{{ result.hashtags }}</p>
+
+            <h3>🎉 Emojis:</h3>
+            <p>{{ result.emojis }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
